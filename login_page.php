@@ -52,9 +52,10 @@ session_start();
 <br><br><br><br><br><br><br><br><br><br><br><br>
 <form>
 
-<input type="button" onclick="stURL('as_doc.html')" class="button" value="Login as Doctor">   
-<input type="button" onclick="stURL('as_patient.html')" class="button" value='Login as Patient'>
 
+<input type="button" onclick="stURL('as_doc.html')" class="button" value="Login as Doctor">   
+
+<input type="button" onclick="stURL('as_doc.php')" class="button" value="Login as Doctor">   
 <div id="contentframe" style="position:relative; top: 0px; left: 0px;">
 <iframe id="iframe1" height="400" width="700"></iframe>
 </div>
