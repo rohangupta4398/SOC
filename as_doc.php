@@ -43,10 +43,16 @@ $_SESSION["login"]="Doctor";
 <body>
 <br><br><br><br><br><br>
 <<<<<<< HEAD
+<<<<<<< HEAD
 <form action="doctor_login.html" method="POST" target="_top">
 =======
 <form action="checkdoc.php" method="POST" target="_top">
 >>>>>>> master
+=======
+
+<form action="checkdoc.php" method="POST" target="_top">
+
+>>>>>>> 36be478ea488238219fee79f38279441f39c5795
 	<div>
 		<center>
   <label>USER ID:</label>
