@@ -1,6 +1,6 @@
 <?php
 session_start();
-$_SESSION["login"]="Doctor";
+//$_SESSION["login"]="Doctor";
 ?>
 <!DOCTYPE html>
 <html>
@@ -42,22 +42,47 @@ $_SESSION["login"]="Doctor";
 </head>
 <body>
 <br><br><br><br><br><br>
-
-<form action="checkdoc.php" method="POST" target="_top">
-
+<form>
 	<div>
 		<center>
+			<span id='3' style="color: red"></span>
+			<br>
   <label>USER ID:</label>
-  <input type="text" class="iop" name="firstname" placeholder=" Enter LICENSE NUMBER" required>
+  <input type="text" class="iop" name="firstname" id='1' placeholder=" Enter LICENSE NUMBER" required>
   <br><br>
   <label>PASSWORD:</label>
-  <input type="password" class="iop" name="lastname" placeholder=" Enter Password" required>
+  <input type="password" class="iop" name="lastname" id='2' placeholder=" Enter Password" required>
   <br><br>
-  <input type="submit" id="uni" value="SUBMIT" style="text-align: center">
+  <input type="button" id="uni" value="SUBMIT" style="text-align: center" onclick="f();">
     </center>
 </div>
 
 </form>
 
+<script>
+	function f(){
+	var xml=new XMLHttpRequest();
+	var a=document.getElementById('1').value;
+	var b=document.getElementById('2').value;
+	xml.onreadystatechange=function(){
+		if(this.readyState==4 && this.status==200){
+			if(this.responseText==1){
+				//document.write('//2');
+				//document.getElementById('3').innerHTML=this.responseText;
+				document.getElementById('3').innerHTML="*Incorrect Username or Password";
+				//document.getElementById('3').style.display=inline-block;
+			}
+			if(this.responseText==2){
+
+				//header("Location: doctor_login1.php");
+				window.top.location.href = "doctor_login1.php";
+			}
+		}
+
+	};
+	xml.open("POST","checkdoc.php?firstname="+a+"&lastname="+b,true);
+	xml.send();
+	}
+</script>
 </body>
 </html>

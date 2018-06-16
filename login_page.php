@@ -14,6 +14,7 @@ session_start();
 <style>
 	body{
 		background: url(back.jpg) no-repeat center fixed;
+		background-size: cover;
 	}
 	h1{
     	text-align: center;
@@ -52,10 +53,9 @@ session_start();
 <br><br><br><br><br><br><br><br><br><br><br><br>
 <form>
 
-
-<input type="button" onclick="stURL('as_doc.html')" class="button" value="Login as Doctor">   
-
 <input type="button" onclick="stURL('as_doc.php')" class="button" value="Login as Doctor">   
+<input type="button" onclick="stURL('as_patient.php')" class="button" value='Login as Patient'>
+
 <div id="contentframe" style="position:relative; top: 0px; left: 0px;">
 <iframe id="iframe1" height="400" width="700"></iframe>
 </div>
