@@ -1,3 +1,16 @@
+<?php
+session_start();
+$adhar=$_SESSION['Aadhar'];
+$conn = new mysqli('localhost', 'root', 'sarthak2007', 'SOC');
+//Check connection
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
+
+$sql = "SELECT * FROM patient where Aadhar=".$adhar;
+$result=$conn->query($sql);
+$row = mysqli_fetch_array($result);
+?>
 <!DOCTYPE html>
 <html>
 <title>MedHelp Patient Pag</title>
@@ -23,7 +36,7 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Open Sans", sans-serif}
 <div class="w3-top">
  <div style="background-color: #35353F" class="w3-bar w3-left-align w3-large">
   <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-padding-large w3-hover-white w3-large w3-theme-d2" href="javascript:void(0);" onclick="openNav()"><i class="fa fa-bars"></i></a>
-  <a href="#" style="background-color: #35353F;color: white;" class="w3-bar-item w3-button w3-padding-large w3-hover-white"><i class="fa fa-home w3-margin-right"></i>Logout</a>
+  <a href="as_doc.php" style="background-color: #35353F;color: white;position:relative;right:10px;" class="w3-bar-item w3-button w3-padding-large w3-hover-white"><i class="fa fa-home w3-margin-right"></i>Logout</a>
   <a href="#" style="background-color: #35353F;color: white;" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white" title="Forum"><i class="fa fa-globe"></i></a>
   <a href="#" style="background-color: #35353F;color: white;" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white" title="Account Settings"><i class="fa fa-user"></i></a>
   <a href="#" style="background-color: #35353F;color: white;" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white" title="Messages"><i class="fa fa-envelope"></i></a>
@@ -54,26 +67,22 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Open Sans", sans-serif}
          <h4 class="w3-center">Patient's Profile</h4>
          <p class="w3-center"><img src="https://i.ytimg.com/vi/hvfoV4h1qHg/maxresdefault.jpg" class="w3-circle" style="height:106px;width:106px" alt="Avatar"></p>
          <hr>
-         <p><i class="fa fa-pencil fa-fw w3-margin-right w3-text-theme"></i><strong>Name: </strong>Sarthak</p>
-         <p><i class="fa fa-home fa-fw w3-margin-right w3-text-theme"></i><strong>Age: </strong>20</p>
-         <p><i class="fa fa-venus-mars fa-fw w3-margin-right w3-text-theme"></i><strong>Sex: </strong>Male</p>
-         <p><i class="fa fa-inr fa-fw w3-margin-right w3-text-theme"></i><strong>Marrital Status: </strong>Nope</p>
-         <p><i class="fa fa-comment-o fa-fw w3-margin-right w3-text-theme"></i><strong>Comments: </strong>Chota Bheem Fan</p>
-         <p><img src="hgt.png" style="height:25px;width:25px;"> <i class="fa-fw w3-margin-right w3-text-theme"></i><strong>Height: </strong>250cm</p>
-         <p><img src="wgt.png" style="height:25px;width:25px;"> <i class="fa-fw w3-margin-right w3-text-theme"></i><strong>Weight: </strong>0.69Kg</p>
+         <p><i class="fa fa-pencil fa-fw w3-margin-right w3-text-theme"></i><strong>Name: </strong><?php echo $row['Name'] ?></p>
+         <p><i class="fa fa-home fa-fw w3-margin-right w3-text-theme"></i><strong>Age: </strong><?php echo $row['AGE'] ?></p>
+         <p><i class="fa fa-venus-mars fa-fw w3-margin-right w3-text-theme"></i><strong>Sex: </strong><?php echo $row['SEX'] ?></p>
+         <p><i class="fa fa-inr fa-fw w3-margin-right w3-text-theme"></i><strong>Marital Status: </strong><?php echo $row['MARITAL STATUS'] ?></p>
+         <p><i class="fa fa-comment-o fa-fw w3-margin-right w3-text-theme"></i><strong>Comments: </strong><?php echo $row['COMMENTS'] ?></p>
+         <p><img src="<?php echo $row['image'] ?>" style="height:25px;width:25px;">
         </div>
       </div>
       <br>
 
-<div id="bloodpressure" style="position:fixed;top:70px;right:30px;width:620px;"></div>
+<div class="w3-container w3-card w3-white w3-round w3-margin" id="bloodpressure" style="position:fixed;top:70px;right:30px;width:620px;"></div>
 <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
 
-<div id="sugarlevel" style="position:fixed;top:500px;right:30px;width:620px;"></div>
-<script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
-<!-- <button style="position:fixed;top:460px;left:160px;height:50px;width:320px;background-color:#35353F;color:white;font-size:18px;" class="w3-bar-item w3-button w3-padding-large" onclick=""><i class="fa fa-home w3-margin-right"></i>Blood Pressure</button>
-<button style="position:fixed;top:520px;left:160px;height:50px;width:320px;background-color:#35353F;color:white;font-size:18px;" class="w3-bar-item w3-button w3-padding-large"><i class="fa fa-home w3-margin-right"></i>Sugar Level</button> -->
-<!-- <input type="Submit" style="position:fixed;top:940px;left:160px;height:20px;width:120px;background-color:#35353F;color:white;font-size:20px;" class="w3-bar-item w3-button w3-padding-large" id="addDataPoint"><i class="fa fa-home w3-margin-right"></i>Add Data</button> -->
+<div class="w3-container w3-card w3-white w3-round w3-margin" id="sugarlevel" style="position:fixed;top:500px;right:30px;width:620px;"></div>
 
+<script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
 
       <div class="w3-row-padding w3-margin-bottom" style="position:absolute;width:1100px;left:375px;top:70px;">
     <div class="w3-quarter">
@@ -83,7 +92,7 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Open Sans", sans-serif}
           <h3>52</h3>
         </div>
         <div class="w3-clear"></div>
-        <h4>Prescribtions</h4>
+        <h4>Prescriptions</h4>
       </div>
     </div>
     <div class="w3-quarter">
@@ -118,7 +127,7 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Open Sans", sans-serif}
       <br><br><br><br><br><br><br><br>
       <div class="w3-container w3-card w3-white w3-round w3-margin" style="position:relative;left:-210px;width:795px;height:450px;"><br>
         <img src="med.png" alt="Avatar" class="w3-left w3-circle w3-margin-right" style="vertical-align: middle;border-radius:0%;width:50px">
-        <h4>Prescribtions</h4>
+        <h4>Prescriptions</h4>
         <hr class="w3-clear">
         <form method="post" action="sub1.php">
         
@@ -368,7 +377,9 @@ var chart2 = new CanvasJS.Chart("sugarlevel",{
       maximum:300,
   },
   toolTip: {
-    shared: true
+    shared: true,
+    cornerRadius:10,
+    animationEnabled:true,
   },
   
   data: [{
