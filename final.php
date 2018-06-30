@@ -191,7 +191,7 @@ $result = $conn->query($sql);
                         <hr>
                         <pstyle='text-color: #666666'>&nbsp&nbsp&nbsp<i class='fa fa-pencil' style='font-size:24px;color: #666666'></i>"."&nbsp&nbsp".$row["Name"]."</p>
                         <p>&nbsp&nbsp&nbsp<i class='fa fa-user-md' style='font-size:24px;color: #666666'></i>"."&nbsp&nbsp". $row["Specialist"]."</p>
-                        <p>&nbsp&nbsp&nbsp<span class='glyphicon glyphicon-education' style='color: #666666;font-size: 24px'></span>"."&nbsp&nbsp". $row["Qualification"]."</p><br><br>";
+                        <br><br>";
 
     }
 $conn->close();
@@ -352,9 +352,9 @@ echo $r->num_rows;
         <span class="w3-right w3-opacity">New Patient</span>
         <h2 align="center">NEW PATIENT</h2>
         <hr class="w3-clear">
-        <form>
+        <form action="param2.php" method="post">
           <center>
-            ENTER AADHAR NUMBER: <input type="text">
+            ENTER AADHAR NUMBER: <input type="text" name='aadhar_no'>
             <br>
             <br>
             <input type="submit" value="SUBMIT" class="w3-button w3-theme-d1 w3-margin-bottom" style="border-radius: 10px;">
@@ -398,12 +398,11 @@ echo $r->num_rows;
 <!--------------------------------------AJAX FOR DISPLAYING SIMULTENOUSLY-------------------------> 
 <script type="text/javascript">
   
+
 function show_list()
 {    
 
-  
     
-
         if (window.XMLHttpRequest) {
             // code for IE7+, Firefox, Chrome, Opera, Safari
             xmlhttp = new XMLHttpRequest();
@@ -413,7 +412,7 @@ function show_list()
         }
         xmlhttp.onreadystatechange = function() {
             if (this.readyState == 4 && this.status == 200) {
-                document.getElementById("txtHint").innerHTML = this.responseText;
+                document.getElementById("txt").innerHTML = this.responseText;
             }
         };
         xmlhttp.open("GET","show_list.php?disease="+document.getElementById('disease').value+"&severity="+document.getElementById('severity').value,true);
@@ -471,7 +470,7 @@ $conn->close();
 
 ?>
 <br><br>
-<div id="txtHint">
+<div id="txthint">
 
 
 <?php
@@ -485,7 +484,6 @@ $sql="SELECT * FROM xyz170635_curr";
 $result=$conn->query($sql);
 echo"<table >
         <tr>
-          <th>Sr.no</th>
           <th>Date Admitted</th>
           <th>Patient Name</th>
           <th>Disease</th>
@@ -493,7 +491,6 @@ echo"<table >
         </tr>";
 while($row = $result->fetch_assoc()) {
      echo  "<tr>
-    <td><a href='adi.php?aadhar=".$row["AADHAR"]."'>".$row["Sno"]."</a></td>
     <td><a href='adi.php?aadhar=".$row["AADHAR"]."'>".$row["Date"]."</a></td>
     <td><a href='adi.php?aadhar=".$row["AADHAR"]."'>".$row["Patient_Name"]."</a></td>
     <td><a href='adi.php?aadhar=".$row["AADHAR"]."'>".$row["Diagnosis"]."</a></td>
@@ -517,8 +514,6 @@ $conn->close();
         <span class="w3-right w3-opacity">
 
 <?php
-
-
 $servername = "localhost";
 $username = "root";
 $password = "";
@@ -534,49 +529,91 @@ echo $r->num_rows;
 
         </span>
         <h2 align="center">REFERED CASES</h4><br>
-        <hr class="w3-clear">
+        <hr class="w3-clear"><!-------------------------------------------------------------------------------------------------->
+
+<!---------------------AJAX FOR REFERED PATIENTS----------------------->
+
+<script type="text/javascript">
+function r_show_list()
+{    
+
+    
+        if (window.XMLHttpRequest) {
+            // code for IE7+, Firefox, Chrome, Opera, Safari
+            xmlhttp = new XMLHttpRequest();
+        } else {
+            // code for IE6, IE5
+            xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+        }
+        xmlhttp.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+                document.getElementById("txt").innerHTML = this.responseText;
+            }
+        };
+        xmlhttp.open("GET","r_show_list.php?doctor="+document.getElementById('doctor').value,true);
+        xmlhttp.send();
+    
+  }  
+
+
+</script>
+
+   <!-----back end for ---- options of disease--------->
+
+<center>
+   REFERED BY DOCTOR:
 
 <?php
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "medhelp";
+$severname="localhost";
+$username="root";
+$password="";
+$dbname="medhelp";
+
+$conn=new mysqli($servername,$username,$password,$dbname);
+$sql="SELECT DISTINCT Doctor FROM xyz170635_referred";
+$result=$conn->query($sql);
+echo"<select name='disease' onchange='r_show_list()' id='doctor'>
+  <option value=''>Select a disease</option>";
+while($row = $result->fetch_assoc()) {
+     echo "<option value='".$row["Doctor"]."'>".$row["Doctor"]."</option>";
+    }
+ echo "</select>";
+$conn->close();
+?>
+</center><br>
 
 
-// Create connection
-$conn = new mysqli($servername, $username, $password, $dbname);
-// Check connection
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-} 
-$sql = "SELECT * FROM xyz170635_referred";
-$result = $conn->query($sql);
-    // output data of each row
+<div id="txt">
+<?php
+$servername="localhost";
+$username="root";
+$password="";
+$dbname="medhelp";
+
+$conn=new mysqli($servername,$username,$password,$dbname);
+$sql="SELECT * FROM xyz170635_referred";
+$result=$conn->query($sql);
 echo"<table >
-  <tr>
-    <th>Sr.no</th>
-    <th>Date Of Reference</th>
-    <th>Patient Name</th>
-    <th>Refered By</th>
-    <th>Comments</th>
-  </tr>";
+        <tr>
+          <th>Date Refered</th>
+          <th>Patient Name</th>
+          <th>Comments</th>
+          <th>Doctor</th>
+        </tr>";
 while($row = $result->fetch_assoc()) {
      echo  "<tr>
-    <td><a href='adi.php?aadhar=".$row["Aadhar"]."'>".$row["Sno"]."</a></td>
     <td><a href='adi.php?aadhar=".$row["Aadhar"]."'>".$row["Date"]."</a></td>
-    <td><a href='adi.php?aadhar=".$row["Aadhar"]."'>".$row["Patient name"]."</a></td>
-    <td><a href='adi.php?aadhar=".$row["Aadhar"]."'>".$row["Doctor"]."</a></td>
+    <td><a href='adi.php?aadhar=".$row["Aadhar"]."'>".$row["Patient_name"]."</a></td>
     <td><a href='adi.php?aadhar=".$row["Aadhar"]."'>".$row["Comments"]."</a></td>
-  </tr>";
-
+    <td><a href='adi.php?aadhar=".$row["Aadhar"]."'>".$row["Doctor"]."</a></td>
+            </tr>";
     }
-  echo "</table>";
-
+echo "</table>";
 $conn->close();
-
 ?>
-   
-        <br><br>      
+
+</div>
+<br>
       </div> 
    <hr>
 
@@ -623,7 +660,6 @@ $result = $conn->query($sql);
     // output data of each row
 echo"<table >
   <tr>
-    <th>Sr.no</th>
     <th>Date Of Reference</th>
     <th>Patient Name</th>
     <th>Refered By</th>
@@ -631,9 +667,8 @@ echo"<table >
   </tr>";
 while($row = $result->fetch_assoc()) {
      echo  "<tr>
-    <td>".$row["Sno"]."</a></td>
     <td>".$row["Date"]."</a></td>
-    <td>".$row["Patient name"]."</a></td>
+    <td>".$row["Patient_name"]."</a></td>
     <td>".$row["Doctor"]."</a></td>
     <td>".$row["Comments"]."</a></td>
   </tr>";
