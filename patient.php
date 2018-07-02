@@ -11,6 +11,9 @@
 //$result=$conn->query($sql);
 //$row = mysqli_fetch_array($result);
 ?>
+
+
+
 <!DOCTYPE html>
 <html>
 <title>MedHelp Patient Pag</title>
@@ -20,6 +23,8 @@
 <link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-blue-grey.css">
 <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Open+Sans'>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
 <style>
 .w3-container[type=button]:hover{
   box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
@@ -30,9 +35,12 @@
 }
 html,body,h1,h2,h3,h4,h5 {font-family: "Open Sans", sans-serif}
 </style>
+
+
+
 <body style="background-image:url('pic8.jpg');background-repeat:repeat;" class="w3-theme-l5">
 
-<!-- Navbar -->
+<!------------------------------------------------------ Navbar--------------------------------------------------------->
 <div class="w3-top">
  <div style="background-color: #35353F" class="w3-bar w3-left-align w3-large">
   <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-padding-large w3-hover-white w3-large w3-theme-d2" href="javascript:void(0);" onclick="openNav()"><i class="fa fa-bars"></i></a>
@@ -42,7 +50,7 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Open Sans", sans-serif}
   <a href="#" style="background-color: #35353F;color: white;" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white" title="Messages"><i class="fa fa-envelope"></i></a>
  </div>
 </div>
-
+<!----------xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx------------------------------------------------->
 
 <!-- Navbar on small screens -->
 <div id="navDemo" class="w3-bar-block w3-theme-d2 w3-hide w3-hide-large w3-hide-medium w3-large">
@@ -52,13 +60,13 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Open Sans", sans-serif}
   <a href="#" class="w3-bar-item w3-button w3-padding-large">My Profile</a>
 </div>
 
-<!-- Page Container -->
+-------->
 <div class="w3-container w3-content" style="max-width:1400px;margin-top:60px">    
   <!-- The Grid -->
   <div class="w3-row">
     <!-- Left Column -->
     <div class="w3-col m3">
-      <!-- Profile -->
+      <!------------------------------ Profile --------------------------------------------------------------->
       <div class="w3-card w3-round w3-white" style="left:20px;top:70px;width:320px;position:fixed" type>
         <div class="w3-container"><p>
          <h4 class="w3-center">Patient's Profile</h4>
@@ -72,54 +80,61 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Open Sans", sans-serif}
         </div>
       </div>
       <br>
+     <!------------------------XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX-------------->
+     <!---------------------BLOOD PRESSURE GRAPH---------------------------------->
 
-<div class="w3-container w3-card w3-white w3-round w3-margin" id="bloodpressure" style="position:fixed;top:55px;right:20px;width:620px;"></div>
-<script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+     <div class="w3-container w3-card w3-white w3-round w3-margin" id="bloodpressure" style="position:fixed;top:55px;right:20px;width:620px;"></div>
+     <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+   
+      <!-----------------------SUGAR LEVEL GRAPH---------------------------------->
+      
+      <div class="w3-container w3-card w3-white w3-round w3-margin" id="sugarlevel" style="position:fixed;top:465px;right:20px;width:620px;"></div>
+      <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
 
-<div class="w3-container w3-card w3-white w3-round w3-margin" id="sugarlevel" style="position:fixed;top:465px;right:20px;width:620px;"></div>
-
-<script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
-
+<!--------------------------NAVIGATION_PART--------------------------------------------------->
       <div class="w3-row-padding w3-margin-bottom" style="position:absolute;width:1100px;left:365px;top:70px;">
-    <div class="w3-quarter">
-      <div class="w3-container w3-red w3-padding-16" type="button" style="width:250px;height:140px;">
-        <div class="w3-left"><img src="med.png" style="height:45px;width:45px;color:white;"></div>
-        <div class="w3-right">
-          <h3>52</h3>
-        </div>
-        <div class="w3-clear"></div>
-        <h4>Prescriptions</h4>
-      </div>
-    </div>
+
+<!------------------------------UPDATE INFO-------------------------------------------------------------->
     <div class="w3-quarter">
       <div class="w3-container w3-blue w3-padding-16" type="button" style="width:250px;height:140px;">
         <div class="w3-left"><img src="rec.png" style="height:45px;width:45px;color:white;"></div>
         <div class="w3-right">
-          <h3>99</h3>
         </div>
         <div class="w3-clear"></div>
         <h4>Medical History</h4>
       </div>
     </div>
+
+    <!---------------------------PRESCRIPTIONS------------------------------------------------------>
+    <div class="w3-quarter">
+      <div class="w3-container w3-red w3-padding-16" type="button" style="width:250px;height:140px;">
+        <div class="w3-left"><img src="info.png" style="height:45px;width:45px;color:white;"></div>
+        <div class="w3-right">
+        </div>
+        <div class="w3-clear"></div>
+        <h4>Update Current Info</h4>
+      </div>
+    </div>
+
     
+<!------------------------------------------------CLOSED CASE---------------------------------------->    
     <div class="w3-quarter">
       <div class="w3-container w3-orange w3-text-white w3-padding-16" type="button" style="width:250px;height:140px;">
         <div class="w3-left"><img src="tick.png" style="height:45px;width:45px;color:white;"></div>
         <div class="w3-right">
-          <h3>99</h3>
         </div>
         <div class="w3-clear"></div>
-        <h4>Close Case</h4>
+        <h4>Close Current Case</h4>
       </div>
     </div>
   </div>
     
     <!-- End Left Column -->
     </div>
-
+<!---XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX-------------------------------->
     
+<!---------------------Prescription FORM------------------------------------------>    
     <div class="w3-col m7">
-    
       <br><br><br><br><br><br><br><br>
       <div class="w3-container w3-card w3-white w3-round w3-margin" style="position:relative;left:-217px;width:795px;height:450px;"><br>
         <img src="med.png" alt="Avatar" class="w3-left w3-circle w3-margin-right" style="vertical-align: middle;border-radius:0%;width:50px">
@@ -146,14 +161,7 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Open Sans", sans-serif}
       </form>
       </div>
       
-      <!-- <div class="w3-container w3-card w3-white w3-round w3-margin" style="position:relative;left:112px;width:1066px;height:300px;"><br>
-        <img src="test.jpg" alt="Avatar" class="w3-left w3-circle w3-margin-right" style="vertical-align: middle;border-radius:0%;width:60px">
-        
-        <h4>Prescribed Tests</h4>
-        <hr class="w3-clear">
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-        <button type="button" class="w3-button w3-theme-d1 w3-margin-bottom"><i class="fa fa-eye" style="font-size:20px"></i>  Full View</button>
-      </div>   -->
+      <!--------------------------------------GET HISTORY---------------------------------------------------->
 
       <div class="w3-container w3-card w3-white w3-round w3-margin"  style="position:relative;left:-217px;width:795px;height:300px;"><br>
         <img src="rec.png" alt="Avatar" class="w3-left w3-circle w3-margin-right" style="vertical-align: middle;border-radius:0%;width:50px">
@@ -168,6 +176,8 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Open Sans", sans-serif}
 
       </div>
 
+<!------------------------------------SUGAR LEVEL INPUT------------------------------------------------>
+
       <div class="w3-container w3-card w3-white w3-round w3-margin"  style="position:relative;left:-217px;width:795px;height:330px;"><br>
         <form method="post" action="sub2.php">
         <img src="sugar.png" class="w3-left w3-circle w3-margin-right" style="vertical-align: middle;border-radius:0%;width:50px;">
@@ -179,11 +189,18 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Open Sans", sans-serif}
         <button style="background-color:#4CAF50;border: none;color: white;padding: 10px 32px;text-align: center;text-decoration: none;position:relative;top:65px;left:300px;border-radius:20px;font-size:20px;"><i class="fa fa-send-o" ></i>Submit</button>
       </form>
       </div>
+
+<!---------------------------------UPDATE CURR INFO------------------------------------------------>
       
      <div class="w3-container w3-card w3-white w3-round w3-margin"  style="position:relative;left:-217px;width:795px;"><br>
         <img src="tick.png" alt="Avatar" class="w3-left w3-circle w3-margin-right" style="vertical-align: middle;border-radius:0%;width:50px">
-        <h4>Closed Cases</h4>
+        <h4>Update Current Status</h4>
         <hr class="w3-clear">
+      <form method="POST" action="update_status.php">
+        <p>Diagnosis:<input type="text" name="diagnosis"></p>
+        <p>Severity:<input type="text" name="severity"></p>
+        <button>Submit</button>
+      </form>
      </div>
     <!-- End Middle Column -->
     </div>
@@ -196,7 +213,7 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Open Sans", sans-serif}
 </div>
 <br>
 
-<!-- Footer -->
+<!--------------------------------------------CONTACT FOR MORE INFORMATION-------------------------------->
 <footer style="background-color:#35353F;padding:10px;">
  <la style="font-size: 20px;color: white;font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;">For any query,contact us at:</la>
   <i class="fa fa-facebook fa-fw w3-margin-right" style="font-size:20px;color:white;"></i>
@@ -204,7 +221,7 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Open Sans", sans-serif}
   <i class="fa fa-google fa-fw w3-margin-right" style="font-size:20px;color:white;"></i>
 </footer>
 
-
+<!----------------------------------------------GRAPH_BACK_END------------------------------------------------>
 <script>
 // Accordion
 function myFunction(id) {
