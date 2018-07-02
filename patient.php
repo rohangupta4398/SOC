@@ -1,15 +1,15 @@
 <?php
-session_start();
-$adhar=$_SESSION['Aadhar'];
-$conn = new mysqli('localhost', 'root', 'sarthak2007', 'SOC');
+//session_start();
+//$adhar=$_SESSION['Aadhar'];
+//$conn = new mysqli('localhost', 'root', 'sarthak2007', 'SOC');
 //Check connection
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-}
+//if ($conn->connect_error) {
+  //  die("Connection failed: " . $conn->connect_error);
+//}
 
-$sql = "SELECT * FROM patient where Aadhar=".$adhar;
-$result=$conn->query($sql);
-$row = mysqli_fetch_array($result);
+//$sql = "SELECT * FROM patient where Aadhar=".$adhar;
+//$result=$conn->query($sql);
+//$row = mysqli_fetch_array($result);
 ?>
 <!DOCTYPE html>
 <html>
@@ -30,7 +30,7 @@ $row = mysqli_fetch_array($result);
 }
 html,body,h1,h2,h3,h4,h5 {font-family: "Open Sans", sans-serif}
 </style>
-<body style="background-image:url('pic8.png');background-repeat:repeat;" class="w3-theme-l5">
+<body style="background-image:url('pic8.jpg');background-repeat:repeat;" class="w3-theme-l5">
 
 <!-- Navbar -->
 <div class="w3-top">
@@ -40,9 +40,6 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Open Sans", sans-serif}
   <a href="#" style="background-color: #35353F;color: white;" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white" title="Forum"><i class="fa fa-globe"></i></a>
   <a href="#" style="background-color: #35353F;color: white;" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white" title="Account Settings"><i class="fa fa-user"></i></a>
   <a href="#" style="background-color: #35353F;color: white;" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white" title="Messages"><i class="fa fa-envelope"></i></a>
-  <a href="#" class="w3-bar-item w3-button w3-hide-small w3-right w3-padding-large w3-hover-white" title="My Account">
-    <img src="ssinghal.jpeg" style="max-height:60px;width:52px">
-  </a>
  </div>
 </div>
 
@@ -63,30 +60,29 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Open Sans", sans-serif}
     <div class="w3-col m3">
       <!-- Profile -->
       <div class="w3-card w3-round w3-white" style="left:20px;top:70px;width:320px;position:fixed" type>
-        <div class="w3-container">
+        <div class="w3-container"><p>
          <h4 class="w3-center">Patient's Profile</h4>
-         <p class="w3-center"><img src="https://i.ytimg.com/vi/hvfoV4h1qHg/maxresdefault.jpg" class="w3-circle" style="height:106px;width:106px" alt="Avatar"></p>
+         <p class="w3-center"><img src="<?php echo $row['image'] ?>" class="w3-circle" style="height:106px;width:106px" alt="Image cannot be loaded"></p>
          <hr>
          <p><i class="fa fa-pencil fa-fw w3-margin-right w3-text-theme"></i><strong>Name: </strong><?php echo $row['Name'] ?></p>
          <p><i class="fa fa-home fa-fw w3-margin-right w3-text-theme"></i><strong>Age: </strong><?php echo $row['AGE'] ?></p>
          <p><i class="fa fa-venus-mars fa-fw w3-margin-right w3-text-theme"></i><strong>Sex: </strong><?php echo $row['SEX'] ?></p>
          <p><i class="fa fa-inr fa-fw w3-margin-right w3-text-theme"></i><strong>Marital Status: </strong><?php echo $row['MARITAL STATUS'] ?></p>
          <p><i class="fa fa-comment-o fa-fw w3-margin-right w3-text-theme"></i><strong>Comments: </strong><?php echo $row['COMMENTS'] ?></p>
-         <p><img src="<?php echo $row['image'] ?>" style="height:25px;width:25px;">
         </div>
       </div>
       <br>
 
-<div class="w3-container w3-card w3-white w3-round w3-margin" id="bloodpressure" style="position:fixed;top:70px;right:30px;width:620px;"></div>
+<div class="w3-container w3-card w3-white w3-round w3-margin" id="bloodpressure" style="position:fixed;top:55px;right:20px;width:620px;"></div>
 <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
 
-<div class="w3-container w3-card w3-white w3-round w3-margin" id="sugarlevel" style="position:fixed;top:500px;right:30px;width:620px;"></div>
+<div class="w3-container w3-card w3-white w3-round w3-margin" id="sugarlevel" style="position:fixed;top:465px;right:20px;width:620px;"></div>
 
 <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
 
-      <div class="w3-row-padding w3-margin-bottom" style="position:absolute;width:1100px;left:375px;top:70px;">
+      <div class="w3-row-padding w3-margin-bottom" style="position:absolute;width:1100px;left:365px;top:70px;">
     <div class="w3-quarter">
-      <div class="w3-container w3-red w3-padding-16" type="button" onclick="scrollWin(200)" style="width:250px;height:140px;">
+      <div class="w3-container w3-red w3-padding-16" type="button" style="width:250px;height:140px;">
         <div class="w3-left"><img src="med.png" style="height:45px;width:45px;color:white;"></div>
         <div class="w3-right">
           <h3>52</h3>
@@ -96,7 +92,7 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Open Sans", sans-serif}
       </div>
     </div>
     <div class="w3-quarter">
-      <div class="w3-container w3-blue w3-padding-16" type="button" onclick="scrollWin(520)" style="width:250px;height:140px;">
+      <div class="w3-container w3-blue w3-padding-16" type="button" style="width:250px;height:140px;">
         <div class="w3-left"><img src="rec.png" style="height:45px;width:45px;color:white;"></div>
         <div class="w3-right">
           <h3>99</h3>
@@ -107,13 +103,13 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Open Sans", sans-serif}
     </div>
     
     <div class="w3-quarter">
-      <div class="w3-container w3-orange w3-text-white w3-padding-16" type="button" onclick="scrollWin(2000)" style="width:250px;height:140px;">
-        <div class="w3-left"><img src="sol.jpg" style="height:45px;width:45px;"></div>
+      <div class="w3-container w3-orange w3-text-white w3-padding-16" type="button" style="width:250px;height:140px;">
+        <div class="w3-left"><img src="tick.png" style="height:45px;width:45px;color:white;"></div>
         <div class="w3-right">
-          <h3>50</h3>
+          <h3>99</h3>
         </div>
         <div class="w3-clear"></div>
-        <h4>Closed Cases</h4>
+        <h4>Close Case</h4>
       </div>
     </div>
   </div>
@@ -125,7 +121,7 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Open Sans", sans-serif}
     <div class="w3-col m7">
     
       <br><br><br><br><br><br><br><br>
-      <div class="w3-container w3-card w3-white w3-round w3-margin" style="position:relative;left:-210px;width:795px;height:450px;"><br>
+      <div class="w3-container w3-card w3-white w3-round w3-margin" style="position:relative;left:-217px;width:795px;height:450px;"><br>
         <img src="med.png" alt="Avatar" class="w3-left w3-circle w3-margin-right" style="vertical-align: middle;border-radius:0%;width:50px">
         <h4>Prescriptions</h4>
         <hr class="w3-clear">
@@ -159,7 +155,7 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Open Sans", sans-serif}
         <button type="button" class="w3-button w3-theme-d1 w3-margin-bottom"><i class="fa fa-eye" style="font-size:20px"></i>  Full View</button>
       </div>   -->
 
-      <div class="w3-container w3-card w3-white w3-round w3-margin"  style="position:relative;left:-210px;width:795px;height:300px;"><br>
+      <div class="w3-container w3-card w3-white w3-round w3-margin"  style="position:relative;left:-217px;width:795px;height:300px;"><br>
         <img src="rec.png" alt="Avatar" class="w3-left w3-circle w3-margin-right" style="vertical-align: middle;border-radius:0%;width:50px">
         <h4>Medical History</h4>
         <hr class="w3-clear">
@@ -172,9 +168,9 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Open Sans", sans-serif}
 
       </div>
 
-      <div class="w3-container w3-card w3-white w3-round w3-margin"  style="position:relative;left:-210px;width:795px;height:330px;"><br>
+      <div class="w3-container w3-card w3-white w3-round w3-margin"  style="position:relative;left:-217px;width:795px;height:330px;"><br>
         <form method="post" action="sub2.php">
-        <img src="sol.jpg" alt="Avatar" class="w3-left w3-circle w3-margin-right" style="vertical-align: middle;border-radius:0%;width:50px">
+        <img src="sugar.png" class="w3-left w3-circle w3-margin-right" style="vertical-align: middle;border-radius:0%;width:50px;">
         <h4>Sugar Level</h4>
         <hr class="w3-clear">
         <div style="position:relative;left:255px;"><span style="font-size:22px;">Blood Sugar Level:  </span><input type="text" name="sugar" style="border-left:none;border-right:none;border-top:none;width:84px;height:30px;position:relative;font-size:20px;left:5px;" placeholder="in mg/dL"></div><br>
@@ -184,11 +180,11 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Open Sans", sans-serif}
       </form>
       </div>
       
-      <div class="w3-container w3-card w3-white w3-round w3-margin"  style="position:relative;left:-210px;width:795px;"><br>
-        <img src="sol.jpg" alt="Avatar" class="w3-left w3-circle w3-margin-right" style="vertical-align: middle;border-radius:0%;width:50px">
+     <div class="w3-container w3-card w3-white w3-round w3-margin"  style="position:relative;left:-217px;width:795px;"><br>
+        <img src="tick.png" alt="Avatar" class="w3-left w3-circle w3-margin-right" style="vertical-align: middle;border-radius:0%;width:50px">
         <h4>Closed Cases</h4>
-        <hr class="w3-clear"
-      </div>
+        <hr class="w3-clear">
+     </div>
     <!-- End Middle Column -->
     </div>
     <br><br><br><br><br><br><br><br><br><br><br><br>
