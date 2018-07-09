@@ -7,11 +7,17 @@ $dbname="SOC";
 
 $conn=new mysqli($servername,$username,$password,$dbname);
 $aadhar=$_POST['aadhar_no'];
-$sno=$_POST['serial_no'];
-$sql="UPDATE ".$_SESSION['ID']." set Status='C' where Aadhar='".$aadhar."' and PSno=".$sno;
+$date=$_POST['yy']."-".$_POST['mm']."-".$_POST['dd'];
+$test=$_POST['test_name'];
+$sql="UPDATE ".$_SESSION['ID']." set Status='C' where Aadhar='".$aadhar."' and Date_doctor='".$date."' and Test_name='".$test."'";
 $conn->query($sql);
-$path='uploads/'.$sno.'_'.$aadhar.".png";
-$sql="UPDATE A_".$aadhar." set Report ='".$path."' where Sno= ".$sno;
+$sql="SELECT * FROM A_".$aadhar." where Date='".$date."' and Test='".$test."'";
+//echo $date;
+$result=$conn->query($sql);
+
+$row=$result->fetch_assoc();
+$path='uploads/'.$row['Sno'].'_'.$aadhar.".png";
+$sql="UPDATE A_".$aadhar." set Report ='".$path."' where Date= '".$date."' and Test='".$test."'";
 $conn->query($sql);
 
 // UPLOADING PORTION

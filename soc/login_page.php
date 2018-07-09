@@ -39,8 +39,8 @@ body, html {
 	
 	
 <div class="w3-container" style="padding:28px 70px;position: relative;" id="about">
-  <h3 style="font-size:400%;" class="w3-center"><p style="font-family:'Pacifico', cursive;">We are Unfold,We are Open</p></h3>
-  <p class="w3-center w3-medium"><i>"For the mind disturbed,the still beauty of dawn is nature's finest balm"</i></p>
+  <h3 style="font-size:480%;" class="w3-center"><p style="font-family:'Impact';">MED_HELP</p></h3>
+  <p class="w3-center w3-medium"><i>"The art of medicine consists of amusing the patient while nature cures the disease."</i></p>
   <center>
   <div align="center" class="w3-row-padding w3-center" style="position: relative;margin-top: 5%;">
     <center>

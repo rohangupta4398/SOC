@@ -477,7 +477,7 @@ var chart2 = new CanvasJS.Chart("sugarlevel",{
         die("Connection failed: " . $conn->connect_error);
       }
           
-      $result = mysqli_query($conn, "SELECT * FROM S_".$_SESSION['a']);
+      $result = mysqli_query($conn, "SELECT * FROM S_".$_SESSION['a']." ORDER BY date_time ASC");
           
       while($row = mysqli_fetch_array($result))
       {

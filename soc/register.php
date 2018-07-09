@@ -1,6 +1,6 @@
 <?php
 session_start();
-include('way2sms-api.php');
+include('trial.php');
 //$_SESSION["login"]="Doctor";
 $usr=$_REQUEST['firstname'];
 $_SESSION['aadhar']=$usr;
@@ -21,7 +21,7 @@ $conn=mysqli_connect("localhost","root","sarthak2007","SOC");
     	$contact=$row['ContactNo'];
         if($row['Password']==NULL){
         	$_SESSION['random']=rand(1000,9999);
-        	sendWay2SMS ( '7706848545' , '1234' , $contact , "Your OTP for MEDHELP is".$_SESSION['random']);
+        	f($contact,"Your OTP for MEDHELP is".$_SESSION['random']);
     		echo 2;
         }
         else
