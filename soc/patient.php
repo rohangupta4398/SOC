@@ -6,8 +6,10 @@ session_start();
 <html>
 <head>
 	<title>MedHelp</title>
+  <link rel="icon" type="image/png" href="medhelp blue.png">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
+  <link rel="stylesheet" href="css/style.css">
 	<link href='http://fonts.googleapis.com/css?family=Comfortaa' rel='stylesheet' type='text/css'>
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
@@ -21,25 +23,21 @@ body, html {
     line-height: 1.8;
 }
 /* Full height image header */
-.bgimg-1 {
+/*.bgimg-1 {
     background-position: center;
     background-size: cover;
     background-image: url("https://d2v9y0dukr6mq2.cloudfront.net/video/thumbnail/0kjHIH6/animated-cartoon-cloudy-sky-and-ground_v12a0p5jl__F0000.png");
     min-height: 100%;
-}
+}*/
 </style>
 
 <body>
 
-<div class="bgimg-1 w3-display-container w3-grayscale-min" id="home">
-	<div class="header">
-
-<header id="home" style="text-align:center; ">
-		 <i class="fa fa-heart w3-margin-bottom w3-large"></i>
-		<a  href="/soc/login_page.php">MEDHELP</a></header>
-	</div>
-	<header id="home">
-	
+ <div class="wrapper">
+    <a href='login_page.php'>
+    <img src='Medhelp icon.png' style='width:10%;height:10%; '></a>
+<div >
+  
 	
 <div class="w3-container" style="padding:28px 70px" id="about">
   
@@ -54,7 +52,21 @@ body, html {
       <p class="w3-large"><font size="5"><b>Register</b></font></p></a>
       <p>First Time here , no worries ,just do a quick registration</p>
     </div>
-    
+    <ul class="bg-bubbles">
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+  </ul>
   </div>
 </div>
 </header>

@@ -25,6 +25,7 @@ mysqli_close($conn);
 <title>Patient Profile</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" type="image/png" href="medhelp blue.png">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-blue-grey.css">
 <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Open+Sans'>
@@ -110,19 +111,28 @@ button {
     font-size: 16px;
     border-radius: 10px;   
 }
+body { 
+  background: url(bkgf.png) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
 </style>
 
 
 <!-----------------------------------------------------------------------MAIN BODY---------------------------------------------------------------------------------------------------->
 
 
-<body style="background-image:url('pic8.jpg');background-repeat:repeat;background-size: cover" class="w3-theme-l5">
+<body>
 
 <!---------------- Navigational-bar ----------------->
 
 <div class="w3-top">
   <div class="w3-bar w3-theme-d5 w3-left-align w3-large" style="background-color:black;">
-  
+  <span style='position: relative;height: 100%;width: 3%;float: left;vertical-align: middle;'><a href='login_page.php' class="w3-bar-item w3-padding-large w3-theme-d5 w3-left" style="position: relative;text-decoration: none;width: 20%;vertical-align: middle;"><img src='medhelp blue.png' style='height: 22px;width: 22px;float: left;vertical-align: middle;margin-top:4px 
+    '></span></a>
   <a href="as_patient.php" class="w3-bar-item w3-hover-white w3-button w3-padding-large w3-right w3-theme-d5"><i class="fa fa-sign-out w3-margin-right"></i>LOGOUT</a>
   <a href="patient_profile.php" class="w3-bar-item w3-button w3-hover-white w3-padding-large w3-theme-d5"><i class="fa fa-home w3-margin-right"></i>HOME</a>
   <a href="medorap.php" class="w3-bar-item w3-button w3-padding-large  w3-hover-white w3-theme-d5"><b><span style="font-size:18px">MEDORA</span></b></a>
@@ -142,7 +152,7 @@ button {
 
  <!------------------------------------- Profile of patient------------------------------------------>
 
-      <div class="w3-card w3-round w3-white" style="left:2%;top:8%;width:19%;position:fixed" type>
+      <div class="w3-card w3-round" style="left:2%;top:8%;width:19%;position:fixed;background-color:  rgba(255, 255, 255, 0.65);color:black" type>
         <div class="w3-container">
          <h2 class="w3-center"><b>Profile</b></h2>
          <p class="w3-center"><img src="<?php echo $row['image']; ?>" class="w3-circle" style="height:150px;width:40%" alt="Avatar"></p>
@@ -180,7 +190,7 @@ button {
       
 
 
-      <div class="w3-container w3-card w3-white w3-round w3-margin"  style="position:relative;left:10%;width:60% ;margin-top:6.5%" id="find_a_doc"><br>
+      <div class="w3-container w3-card w3-round w3-margin"  style="position:relative;left:10%;width:60% ;margin-top:6.5%;background-color:  rgba(255, 255, 255, 0.65);color:black" id="find_a_doc"><br>
         <img src="find_doc.png" alt="Avatar" class="w3-left w3-circle w3-margin-right" style="vertical-align: middle;border-radius:0%;width:10%">
         <h2 align="center">FIND A DOC</h2>
         <hr class="w3-clear">
@@ -303,7 +313,7 @@ $conn->close();
 
   <!-------------------------BLOOD SUGAR MONITORING--------------------->   
    
-      <div class="w3-container w3-card w3-white w3-round w3-margin"  style="position:relative;left:10%;width:60%" id=blood_sugar><br>
+      <div class="w3-container w3-card w3-round w3-margin"  style="position:relative;left:10%;width:60%;background-color:  rgba(255, 255, 255, 0.65);color:black" id=blood_sugar><br>
                 <form method="post" action="sub4.php">
         <img src="sugar_lvl.jpg" class="w3-left w3-circle w3-margin-right" style="vertical-align: middle;border-radius:0%;width:10%;">
         <h2 align="center">Sugar Level</h2>
@@ -318,7 +328,7 @@ $conn->close();
       <br>
  <!------------------------------UPLOAD REPORTS----------------------------->
 
-      <div class="w3-container w3-card w3-white w3-round w3-margin"  style="position:relative;left:10%;width:60%;" id="upload_reports"><br>
+      <div class="w3-container w3-card w3-round w3-margin"  style="position:relative;left:10%;width:60%;background-color:  rgba(255, 255, 255, 0.65);color:black" id="upload_reports"><br>
         <img src="upload.png" alt="Avatar" class="w3-left w3-circle w3-margin-right" style="vertical-align: middle;border-radius:0%;width:8%">
         <h2 align="center">UPLOAD REPORTS</h2>
         <hr class="w3-clear">
@@ -341,7 +351,7 @@ $conn->close();
 
 <br>
 
-       <div class="w3-container w3-card w3-white w3-round w3-margin" style="width:60%;position:relative;left:10%;"id="lab_list"><br>
+       <div class="w3-container w3-card w3-round w3-margin" style="width:60%;position:relative;left:10%;background-color:  rgba(255, 255, 255, 0.65);color:black"id="lab_list"><br>
         <img src="lab_list.png" style="width:60px;float: left">
         
         <h2 align="center">MEDICAL LAB LIST</h4><br>

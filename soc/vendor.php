@@ -28,7 +28,7 @@ if(!isset($_SESSION['ID']))
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/style1.css">
+    <link rel="icon" type="image/png" href="medhelp blue.png">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
@@ -129,6 +129,13 @@ th {
 
 }
 
+body { 
+  background: url(bkgf.png) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
 
 
 
@@ -175,7 +182,8 @@ top:390px;
 <div class="w3-top" >
 
  <div class="w3-bar w3-theme-d5 w3-left-align w3-large" >
-    <a href='login_page.php'  class="w3-bar-item w3-padding-large w3-theme-d5 w3-left" style="text-decoration: none;"><span style='height: 100%;width: 100%;float: left'><img src='medhelp blue.png' style='width:auto;height:auto;max-height: 2%;max-width: 2%;float: left'/></span></a>
+    <span style='position: relative;height: 100%;width: 3%;float: left;vertical-align: middle;'><a href='login_page.php' class="w3-bar-item w3-padding-large w3-theme-d5 w3-left" style="position: relative;text-decoration: none;width: 20%;vertical-align: middle;"><img src='medhelp blue.png' style='height: 22px;width: 22px;float: left;vertical-align: middle;margin-top:4px 
+    '></span></a>
     <a href="vendor.php" class="w3-bar-item w3-button w3-hover-white w3-padding-large w3-theme-d5" style="text-decoration: none"><i class="fa fa-home w3-margin-right"></i>HOME</a>
     <a href="as_vendor.php" class="w3-bar-item w3-hover-white w3-button w3-padding-large w3-right w3-theme-d5" style="text-decoration: none"><i class="fa fa-sign-out w3-margin-right" ></i>LOGOUT</a>
 
@@ -186,7 +194,6 @@ top:390px;
 
 
 
-<div class="wrapper">
 <!----------------------------PROFILE PART---------->
 
 
@@ -205,7 +212,7 @@ top:390px;
 
       <!-- Profile -->
 
-      <div class="w3-card w3-round w3-white" style="position: fixed;width: 22%;left:5%;margin-top:0.8%;" id="profile">
+      <div class="w3-card w3-round" style="position: fixed;width: 22%;left:5%;margin-top:0.8%;background-color:  rgba(255, 255, 255, 0.65);color:black" id="profile">
 
         <div class="w3-container" >
 

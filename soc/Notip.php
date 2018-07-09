@@ -28,20 +28,29 @@ mysqli_close($conn);
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="icon" type="image/png" href="medhelp blue.png">
 <link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-blue-grey.css">
 <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Open+Sans'>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <style>
 html,body,h1,h2,h3,h4,h5 {font-family: "Open Sans", sans-serif}
+body { 
+  background: url(bkgf.png) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
 </style>
 </head>
-<body style="background-image:url('pic8.jpg');background-repeat:repeat;background-size: cover" class="w3-theme-l5">
+<body>
 
 <!-- Navbar -->
 <div class="w3-top">
  <div class="w3-bar w3-theme-d5 w3-left-align w3-large" style="background-color:black">
-
+  <span style='position: relative;height: 100%;width: 3%;float: left;vertical-align: middle;'><a href='login_page.php' class="w3-bar-item w3-padding-large w3-theme-d5 w3-left" style="position: relative;text-decoration: none;width: 20%;vertical-align: middle;"><img src='medhelp blue.png' style='height: 22px;width: 22px;float: left;vertical-align: middle;margin-top:4px 
+    '></span></a>
   <a href="medorap.php" class="w3-bar-item w3-button w3-padding-large w3-hover-white w3-theme-d5"><b><span style="font-size:18px">MEDORA</span></b></a>
   <a href="patient_profile.php" class="w3-bar-item w3-button w3-hover-white w3-padding-large w3-theme-d5"><i class="fa fa-home w3-margin-right"></i>HOME</a>
   <a href="as_patient.php" class="w3-bar-item w3-hover-white w3-button w3-padding-large w3-right w3-theme-d5"><i class="fa fa-sign-out w3-margin-right"></i>LOGOUT</a>
@@ -55,7 +64,7 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Open Sans", sans-serif}
     <!-- Left Column -->
     <div class="w3-col m3">
       <!-- Profile -->
-      <div class="w3-card w3-round w3-white" style="position:fixed;left:80px;top:90px;width:350px;">
+      <div class="w3-card w3-round" style="position:fixed;left:80px;top:90px;width:350px;background-color:  rgba(255, 255, 255, 0.65);color:black">
         <div class="w3-container">
          <h2 class="w3-center">Profile</h2>
          <p class="w3-center"><img src="<?php echo $row['image']; ?>" class="w3-circle" style="height:150px;width:110px;" alt="Avatar"></p>
@@ -84,7 +93,7 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Open Sans", sans-serif}
 	      $sql = "SELECT * FROM patient where AADHAR='".$row['Aadhar']."'";               
 	      $pat=mysqli_query($conn,$sql);
 	      $rowp=mysqli_fetch_assoc($pat);
-          echo "<div class='w3-container w3-card w3-white w3-round w3-margin w3-padding-large'  ><br>
+          echo "<div class='w3-container w3-card w3-round w3-margin w3-padding-large' style=';background-color:  rgba(255, 255, 255, 0.65);color:black' ><br>
               <img src='".$rowp['image']."' alt='Avatar' class='w3-left w3-circle w3-margin-right' style='width:60px;float:left;'>
               <span>Name:".$rowp['Name']."<br>Category:".$row['Category']."</span>
               <br><br><br><br>
@@ -96,7 +105,7 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Open Sans", sans-serif}
 	      $sql = "SELECT * FROM doctor where LicenseID='".$answer['LIC']."'";
           $ansd=mysqli_query($conn,$sql);
           $answd=mysqli_fetch_assoc($ansd);
-          echo "<div class='w3-container w3-card w3-white w3-round w3-margin' ><br>
+          echo "<div class='w3-container w3-card w3-round w3-margin' style='background-color:  rgba(255, 255, 255, 0.65);color:black'><br>
                 <img src='".$answd['Image']."' alt='Avatar' class='w3-left w3-circle w3-margin-right' style='width:60px;float:left;'>
                 <span>Name:".$answd['Name']."<br>Specialist:".$answd['Specialist']."</span>
                 <br><br><br><br>

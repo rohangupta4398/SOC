@@ -9,35 +9,50 @@ if(!isset($_SESSION['random']))
 <html>
 <head>
 	<title>SET</title>
-	<link rel="stylesheet" type="text/css" href="style.css">
-	<link href='http://fonts.googleapis.com/css?family=Comfortaa' rel='stylesheet' type='text/css'>
-	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="icon" type="image/png" href="medhelp blue.png">
 </head>
 <body>
 
-	<div class="header">
-		 <i class="fa fa-heart w3-margin-bottom w3-large"></i>
-		<a href="/soc/login_page.php">MEDHELP</a>
-	</div>
+	<div class="wrapper">
+		
+		<a href='login_page.php'>
+		<img src='Medhelp icon.png' style='width:10%;height:10%; '></a>
 
+
+	<div class="container">
+		
+		<h1 style='font-size: 350%'><b>Set New Password</b></h1>
 
 	
 	
 
 	<form action="otp.php" method="post">
-		<h1>Set New Password</h1>
-		<br>
 		<span id='3' style="color: red"></span>
 		<br>
 		<input type="password" placeholder="New password" id="1" name="firstname" required>
 		<input type="password" placeholder="Confirm password" id="2" name="lastname" required>
 		<br><br>
-		<input type="button"  value="Submit" onclick="f();">
-		<input type="reset" value="RESET">
-
+		<button type="button" onclick="f();">Submit</button>
+		<button type="reset">Reset</button>
 	</form>
+	</div>
+	<ul class="bg-bubbles">
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+	</ul>
+	</div>
 <script>
 	function f(){
 

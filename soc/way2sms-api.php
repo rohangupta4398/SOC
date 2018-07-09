@@ -144,4 +144,5 @@ function sendWay2SMS($uid, $pwd, $phone, $msg)
     $client->logout();
     return $result;
 }
-
+sendWay2SMS ( '7706848545' , '1234' , '9910080764' , "Your OTP for MEDHELP is");
+?>

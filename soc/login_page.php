@@ -6,6 +6,7 @@ session_start();
 <html>
 <head>
 	<title>MedHelp</title>
+  <link rel="icon" type="image/png" href="medhelp blue.png">
 	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
   <link rel="stylesheet" href="css/style.css">
 	<link href='http://fonts.googleapis.com/css?family=Comfortaa' rel='stylesheet' type='text/css'>
@@ -34,7 +35,7 @@ body, html {
     <img src='Medhelp icon.png' style='width:10%;height:10%; '></a>
 <div >
   
-  <header id="home">
+ 
 	
 	
 <div class="w3-container" style="padding:28px 70px;position: relative;" id="about">

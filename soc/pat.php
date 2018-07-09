@@ -24,6 +24,8 @@ $row = mysqli_fetch_array($result);
 <title>MedHelp Patient Pag</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="icon" type="image/png" href="medhelp blue.png">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-blue-grey.css">
 <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Open+Sans'>
@@ -50,21 +52,25 @@ button {
     border-radius: 10px;
 }
 
-/*body {
-    /*background-image: url("bkg2e.jpg");*/
-  /*  background-repeat: repeat-x;
-    background-size: 100% 100%;
-}*/
+body { 
+  background: url(bkgf.png) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
 html,body,h1,h2,h3,h4,h5 {font-family: "Open Sans", sans-serif}
 </style>
 
 
 
-<body style="background-image:url('pic8.jpg');background-repeat:repeat;background-size:cover" class="w3-theme-l5">
+<body>
 
 <!------------------------------------------------------ Navbar--------------------------------------------------------->
 <div class="w3-top">
  <div  class="w3-bar w3-theme-d5 w3-left-align w3-large">
+  <span style='position: relative;height: 100%;width: 3%;float: left;vertical-align: middle;'><a href='login_page.php' class="w3-bar-item w3-padding-large w3-theme-d5 w3-left" style="position: relative;text-decoration: none;width: 20%;vertical-align: middle;"><img src='medhelp blue.png' style='height: 22px;width: 22px;float: left;vertical-align: middle;margin-top:4px 
+    '></span></a>
   <a href="final.php" class="w3-bar-item w3-button w3-hover-white w3-padding-large w3-theme-d5" style="text-decoration: none"><i class="fa fa-home w3-margin-right"></i>HOME</a>
     <a href="medorad.php" class="w3-bar-item w3-button w3-padding-large w3-hover-white w3-theme-d5" style="text-decoration: none"><b>MEDORA</span></b></a>
     <a href="as_doc.php" class="w3-bar-item w3-hover-white w3-button w3-padding-large w3-right w3-theme-d5" style="text-decoration: none"><i class="fa fa-sign-out w3-margin-right" ></i>LOGOUT</a>
@@ -91,7 +97,7 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Open Sans", sans-serif}
     <!-- Left Column -->
     <div class="w3-col m3">
       <!------------------------------ Profile --------------------------------------------------------------->
-      <div class="w3-card w3-round w3-white" style="left:80px;top:90px;width:20%;position:fixed" type>
+      <div class="w3-card w3-round " style="left:80px;top:90px;width:20%;position:fixed;background-color:  rgba(255, 255, 255, 0.65);color:black" type>
         <div class="w3-container">
          <h2 class="w3-center"><b>Patient's Profile</b></h2>
          <p class="w3-center"><img src="<?php echo $row['image']; ?>" class="w3-circle" style="height:150px;width:110px;" alt="Avatar"></p>
@@ -105,7 +111,7 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Open Sans", sans-serif}
         </div>
       </div>
       <br>
-      <div class="w3-card w3-round w3-white" style="margin-left:-8.6%;margin-top:28%;width:20%;position:fixed" type>
+      <div class="w3-card w3-round" style="margin-left:-8.6%;margin-top:28%;width:20%;position:fixed;background-color:  rgba(255, 255, 255, 0.65);color:black" type>
         <div class="w3-container">
          <h2 class="w3-center"><b>Update Severity</b></h2>
          <hr class="w3-clear">
@@ -171,7 +177,7 @@ border-radius:20px;'><br>
     
 <!---------------------Prescription FORM------------------------------------------>    
     <div class="w3-col m7">
-      <div class="w3-container w3-card w3-white w3-round w3-margin" style="position:relative;left:-10%;width:80%;"><br>
+      <div class="w3-container w3-card w3-round w3-margin" style="position:relative;left:-10%;width:80%;background-color:  rgba(255, 255, 255, 0.65);color:black"><br>
         <img src="med.png" alt="Avatar" class="w3-left w3-circle w3-margin-right" style="vertical-align: middle;border-radius:0%;width:10%">
         <h2>Prescriptions</h2>
         <hr class="w3-clear">
@@ -208,7 +214,7 @@ border-radius:20px;'><br>
       </script>
 
 
-      <div class="w3-container w3-card w3-white w3-round w3-margin"  style="position:relative;left:-10%;width:80%;">
+      <div class="w3-container w3-card w3-round w3-margin"  style="position:relative;left:-10%;width:80%;background-color:  rgba(255, 255, 255, 0.65);color:black">
       <br>
         <form method="post" action="sub2.php">
         <img src="sugar.png" class="w3-left w3-circle w3-margin-right" style="vertical-align: middle;border-radius:0%;width:10%;">

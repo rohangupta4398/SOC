@@ -28,6 +28,7 @@ mysqli_close($conn);
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="icon" type="image/png" href="medhelp blue.png">
 <link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-blue-grey.css">
 <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Open+Sans'>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -82,18 +83,27 @@ button {
     font-size: 16px;
     border-radius: 10px;
 }
+body { 
+  background: url(bkgf.png) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
 </style>
 
 
 <!-----------------------------------------------------------------------MAIN BODY---------------------------------------------------------------------------------------------------->
 
 
-<body style="background-image:url('pic8.jpg');background-repeat:repeat;background-size: cover" class="w3-theme-l5">
+<body >
 
 <!---------------- Navigational-bar ----------------->
 
 <div class="w3-top">
  <div style="background-color: #35353F" class="w3-bar w3-left-align w3-large">
+  <span style='position: relative;height: 100%;width: 3%;float: left;vertical-align: middle;'><a href='login_page.php' class="w3-bar-item w3-padding-large w3-theme-d5 w3-left" style="position: relative;text-decoration: none;width: 20%;vertical-align: middle;"><img src='medhelp blue.png' style='height: 22px;width: 22px;float: left;vertical-align: middle;margin-top:4px 
+    '></span></a>
   <a href="final.php" class="w3-bar-item w3-button w3-hover-white w3-padding-large w3-theme-d5" style="text-decoration: none"><i class="fa fa-home w3-margin-right"></i>HOME</a>
     <a href="medorad.php" class="w3-bar-item w3-button w3-padding-large w3-hover-white w3-theme-d5" style="text-decoration: none"><b>MEDORA</span></b></a>
     <a href="history2.php" class="w3-bar-item w3-button w3-padding-large w3-hover-white w3-theme-d5" style="text-decoration: none"><b>MEDICAL HISTORY</span></b></a>
@@ -104,7 +114,6 @@ button {
 <!--xxxxxxx  navigational bar  xxxxxxxxxxxxxxxxxxx-->
 
 
-
 <div class="w3-container w3-content" style="max-width:1400px;margin-top:60px">    
   <!-- The Grid -->
   <div class="w3-row">
@@ -113,7 +122,7 @@ button {
 
  <!------------------------------------- Profile of patient------------------------------------------>
 
-      <div class="w3-card w3-round w3-white" style="left:80px;top:90px;width:20%;position:fixed" type>
+      <div class="w3-card w3-round" style="left:80px;top:90px;width:20%;position:fixed;background-color:  rgba(255, 255, 255, 0.65);color:black" type>
         <div class="w3-container">
          <h2 class="w3-center"><b>Patient's Profile</b></h2>
          <p class="w3-center"><img src="<?php echo $row['image']; ?>" class="w3-circle" style="height:150px;width:110px;" alt="Avatar"></p>
@@ -149,7 +158,7 @@ button {
       
   <!-------------------------REFER IT TO ANOTHER DOCTOR--------------------->   
    
-      <div class="w3-container w3-card w3-white w3-round w3-margin"  style="position:relative;left:-10%;width:80%;top:20%;" id="refer"><br>
+      <div class="w3-container w3-card w3-round w3-margin"  style="position:relative;left:-10%;width:80%;top:20%;;background-color:  rgba(255, 255, 255, 0.65);color:black" id="refer"><br>
         <img src="referred_patient.png" alt="Avatar" class="w3-left w3-circle w3-margin-right" style="vertical-align: middle;border-radius:0%;width:10%">
         <h2 align="center">REFER TO ANOTHER DOCTOR</h2>
         <hr class="w3-clear">
@@ -211,7 +220,7 @@ button {
 
   <!---------------------ADD TO CURRENT PATIENT LIST---------------->
       
-      <div class="w3-container w3-card w3-white w3-round w3-margin"  style="position:relative;left:-10%;width:80%;" id="add"><br>
+      <div class="w3-container w3-card w3-round w3-margin"  style="position:relative;left:-10%;width:80%;;background-color:  rgba(255, 255, 255, 0.65);color:black" id="add"><br>
         <img src="new_patient2png.png" alt="Avatar" class="w3-left w3-circle w3-margin-right" style="vertical-align: middle;border-radius:0%;width:10%">
         <h2 align="center">ADD TO CURRENT PATIENTS</h2>
         <hr class="w3-clear">

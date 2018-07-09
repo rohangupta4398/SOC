@@ -25,6 +25,7 @@ mysqli_close($conn);
 <title>MedHelp Patient Pag</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" type="image/png" href="medhelp blue.png">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-blue-grey.css">
 <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Open+Sans'>
@@ -72,17 +73,26 @@ button {
     font-size: 16px;
     border-radius: 10px;
 }
+
 html,body,h1,h2,h3,h4,h5 {font-family: "Open Sans", sans-serif}
+body { 
+  background: url(bkgf.png) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
 </style>
 
 
 
-<body style="background-image:url('pic8.jpg');background-repeat:repeat-x;background-size: cover" class="w3-theme-l5">
+<body>
 
 <!------------------------------------------------------ Navbar--------------------------------------------------------->
 <div class="w3-top">
   <div class="w3-bar w3-theme-d5 w3-left-align w3-large" style="background-color:black;">
-  
+  <span style='position: relative;height: 100%;width: 3%;float: left;vertical-align: middle;'><a href='login_page.php' class="w3-bar-item w3-padding-large w3-theme-d5 w3-left" style="position: relative;text-decoration: none;width: 20%;vertical-align: middle;"><img src='medhelp blue.png' style='height: 22px;width: 22px;float: left;vertical-align: middle;margin-top:4px 
+    '></span></a>
   <a href="as_patient.php" class="w3-bar-item w3-hover-white w3-button w3-padding-large w3-right w3-theme-d5"><i class="fa fa-sign-out w3-margin-right"></i>LOGOUT</a>
   <a href="patient_profile.php" class="w3-bar-item w3-button w3-hover-white w3-padding-large w3-theme-d5"><i class="fa fa-home w3-margin-right"></i>HOME</a>
   <a href="medorap.php" class="w3-bar-item w3-button w3-padding-large  w3-hover-white w3-theme-d5"><b><span style="font-size:18px">MEDORA</span></b></a>
@@ -106,7 +116,7 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Open Sans", sans-serif}
     <!-- Left Column -->
     <div class="w3-col m3">
       <!------------------------------ Profile --------------------------------------------------------------->
-      <div class="w3-card w3-round w3-white" style="left:2%;top:8%;width:19%;position:fixed" type>
+      <div class="w3-card w3-round" style="left:2%;top:8%;width:19%;position:fixed;background-color:  rgba(255, 255, 255, 0.65);color:black" type>
         <div class="w3-container">
          <h2 class="w3-center"><b>Profile</b></h2>
          <p class="w3-center"><img src="<?php echo $row['image']; ?>" class="w3-circle" style="height:150px;width:40%" alt="Avatar"></p>
@@ -125,7 +135,7 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Open Sans", sans-serif}
 
     </div></div>
       <div class="w3-col m7">
-        <div class="w3-container w3-card w3-white w3-round w3-margin"  style="position:relative;left:-10%;width:150%;"><br>
+        <div class="w3-container w3-card w3-round w3-margin"  style="position:relative;left:-10%;width:150%;background-color:  rgba(255, 255, 255, 0.65);color:black"><br>
             <img src="rec.png" alt="Avatar" class="w3-left w3-circle w3-margin-right" style="vertical-align: middle;border-radius:0%;width:5%">
             <h1 align='center'>Medical History</h1>
             <hr class="w3-clear">

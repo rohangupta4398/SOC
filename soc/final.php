@@ -18,6 +18,7 @@ if(!isset($_SESSION['LicenseID']))
 <!----for qualification icon--->
   <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="icon" type="image/png" href="medhelp blue.png">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
@@ -141,12 +142,14 @@ th {
     border-radius: 10px;
 }
 
-/*body {
-    background-image: url("bkg2e.jpg");
-    background-repeat: repeat-x;
-    background-size: 100% 100%;
+body { 
+  background: url(bkgf.png) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 }
-*/
+
 </style>
 
 <!-------------positioning of piechart-------------------->
@@ -163,11 +166,13 @@ left:80px;
 
 </head>
 <!---------------------------------------MAIN BODY STARTS FROM HERE--------------------------------->
-<body style="background-image:url('pic8.jpg');background-repeat:repeat;background-size: cover" class="w3-theme-l5">
+<body>
 
 <!-- Navbar -- the LOG OUT BUTTON-->
 <div class="w3-top" >
  <div class="w3-bar w3-theme-d5 w3-left-align w3-large" >
+  <span style='position: relative;height: 100%;width: 3%;float: left;vertical-align: middle;'><a href='login_page.php' class="w3-bar-item w3-padding-large w3-theme-d5 w3-left" style="position: relative;text-decoration: none;width: 20%;vertical-align: middle;"><img src='medhelp blue.png' style='height: 22px;width: 22px;float: left;vertical-align: middle;margin-top:4px 
+    '></span></a>
     <a href="final.php" class="w3-bar-item w3-button w3-hover-white w3-padding-large w3-theme-d5" style="text-decoration: none"><i class="fa fa-home w3-margin-right"></i>HOME</a>
     <a href="medorad.php" class="w3-bar-item w3-button w3-padding-large w3-hover-white w3-theme-d5" style="text-decoration: none"><b>MEDORA</span></b></a>
     <a href="as_doc.php" class="w3-bar-item w3-hover-white w3-button w3-padding-large w3-right w3-theme-d5" style="text-decoration: none"><i class="fa fa-sign-out w3-margin-right" ></i>LOGOUT</a>
@@ -184,7 +189,7 @@ left:80px;
     <!-- Left Column -->
     <div class="w3-col m3" >
       <!-- Profile -->
-      <div class="w3-card w3-round w3-white" style="position: fixed;width: 20%;left: 4.35%;top:8%;" id="profile">
+      <div class="w3-card w3-round" style="position: fixed;width: 20%;left: 4.35%;top:8%;background-color:  rgba(255, 255, 255, 0.65);color:black" id="profile">
         <div class="w3-container" >
          <h2 class="w3-center">Profile</h2>
          
@@ -404,7 +409,7 @@ echo $r->num_rows;
   <hr>
 
 <!------------------------------------------NEW PATIENTS------------------------------------------------------->  
-      <div class="w3-container w3-card w3-white w3-round w3-margin" style="width:100%; "id="curnt"><br>
+      <div class="w3-container w3-card w3-round w3-margin" style="width:100%;background-color:  rgba(255, 255, 255, 0.65);color:black "id="curnt"><br>
         <img src="new_patient2png.png"  style="width:60px;float: left;">
         <h2 align="center">NEW PATIENT</h2>
         <hr class="w3-clear">
@@ -453,7 +458,7 @@ echo $r->num_rows;
 
 <hr>
 <!--------------------------------------CURRENT PATIENTS------------------------------------------------------->
-      <div class="w3-container w3-card w3-white w3-round w3-margin" style="width:100%; " id="current"><br>
+      <div class="w3-container w3-card w3-round w3-margin" style="width:100%;background-color:  rgba(255, 255, 255, 0.65);color:black " id="current"><br>
         <img src="current_patient.png" style="width: 60px;float: left;">
         <span class="w3-right w3-opacity">
 
@@ -611,7 +616,7 @@ $conn->close();
 <hr>
 
 <!------------------------------------REFERED PATIENTS------------------------------------------------------->
-      <div class="w3-container w3-card w3-white w3-round w3-margin" style="width:100%; " id="refered"><br>
+      <div class="w3-container w3-card w3-round w3-margin" style="width:100%;background-color:  rgba(255, 255, 255, 0.65);color:black " id="refered"><br>
         <img src="referred_patient.png"  style="width:60px;float: left">
         <span class="w3-right w3-opacity">
 
@@ -738,7 +743,7 @@ $conn->close();
    <hr>
 
 <!-------------------------------LAB LIST--------------------------------------------------------------------->
-      <div class="w3-container w3-card w3-white w3-round w3-margin" style="width:100%; "id="lab_list"><br>
+      <div class="w3-container w3-card w3-round w3-margin" style="width:100%;background-color:  rgba(255, 255, 255, 0.65);color:black "id="lab_list"><br>
         <img src="lab_list.png" style="width:60px;float: left">
         <h2 align="center">MEDICAL LAB LIST</h2><br>
         <hr class="w3-clear"> 
@@ -829,7 +834,7 @@ $conn->close();
       </div> 
      <hr>
 <!-----------------------------SOLVED CASES--------------------------------------------------------------------->
-       <div class="w3-container w3-card w3-white w3-round w3-margin"style="width:100%; " id="solved_cases"><br>
+       <div class="w3-container w3-card w3-round w3-margin"style="width:100%;background-color:  rgba(255, 255, 255, 0.65);color:black" id="solved_cases"><br>
         <img src="completed.png" style="width:60px;float: left;">
         <span class="w3-right w3-opacity">
           
