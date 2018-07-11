@@ -30,12 +30,20 @@ mysqli_close($conn);
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="icon" type="image/png" href="medhelp blue.png">
 <link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-blue-grey.css">
 <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Open+Sans'>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <style>
 html,body,h1,h2,h3,h4,h5 {font-family: "Open Sans", sans-serif}
+body { 
+  background: url(bkgf.png) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
 textarea {
     width: 80%;
     height: 250px;
@@ -75,12 +83,13 @@ textarea {
   });
 </script>
 </head>
-<body style="background-image:url('pic8.jpg');background-repeat:repeat;background-size: cover" class="w3-theme-l5">
+<body>
 
 <!-- Navbar -->
 <div class="w3-top">
  <div class="w3-bar w3-theme-d5 w3-left-align w3-large" style="background-color:black">
-
+  <span style='position: relative;height: 100%;width: 3%;float: left;vertical-align: middle;'><a href='login_page.php' class="w3-bar-item w3-padding-large w3-theme-d5 w3-left" style="position: relative;text-decoration: none;width: 20%;vertical-align: middle;"><img src='medhelp blue.png' style='height: 22px;width: 22px;float: left;vertical-align: middle;margin-top:4px 
+    '></span></a>
   <a href="medorad.php" class="w3-bar-item w3-button w3-padding-large w3-hover-white w3-theme-d5"><b><span style="font-size:18px">MEDORA</span></b></a>
   <a href="final.php" class="w3-bar-item w3-button w3-hover-white w3-padding-large w3-theme-d5"><i class="fa fa-home w3-margin-right"></i>HOME</a>
   <a href="as_doc.php" class="w3-bar-item w3-hover-white w3-button w3-padding-large w3-right w3-theme-d5"><i class="fa fa-sign-out w3-margin-right"></i>LOGOUT</a>
@@ -93,7 +102,7 @@ textarea {
     <!-- Left Column -->
     <div class="w3-col m3">
       <!-- Profile -->
-      <div class="w3-card w3-round w3-white" style="position:fixed;left:80px;top:90px;width:350px;">
+      <div class="w3-card w3-round" style="position:fixed;left:80px;top:90px;width:350px;background-color:  rgba(255, 255, 255, 0.65);color:black"">
         <div class="w3-container">
          <h2 class="w3-center">Profile</h2>
          <p class="w3-center"><img src="<?php echo $row['Image']; ?>" class="w3-circle" style="height:150px;width:110px;" alt="Avatar"></p>
@@ -128,7 +137,7 @@ textarea {
                 $rowp=mysqli_fetch_assoc($pat);
                 echo "<form action='answerc.php' method='post' ><div>
                     <button type='button' class='w3-button w3-xlarge w3-circle w3-theme-d5' style='background-color: #05193e;float:right' id='$b'><i class='fa fa-pencil'></i></button>
-                    <div class='w3-container w3-card w3-white w3-round w3-margin w3-padding-large'  id='$a'><br>
+                    <div class='w3-container w3-card w3-round w3-margin w3-padding-large' style='background-color:  rgba(255, 255, 255, 0.65);color:black' id='$a'><br>
                     <img src='".$rowp['image']."' alt='Avatar' class='w3-left w3-circle w3-margin-right' style='width:60px;float:left;'>
                     <span>Name:  ".$rowp['Name']."<br>Category:  ".$row['Category']."</span>
                     <br><br><br><br>
@@ -143,7 +152,7 @@ textarea {
                 $rowd=mysqli_fetch_assoc($doc);
                 echo "<form action='answerc.php' method='post' ><div>
                     <button type='button' class='w3-button w3-xlarge w3-circle w3-theme-d5' style='background-color: #05193e;float:right' id='$b'><i class='fa fa-pencil'></i></button>
-                    <div class='w3-container w3-card w3-white w3-round w3-margin w3-padding-large'  id='$a'><br>
+                    <div class='w3-container w3-card w3-round w3-margin w3-padding-large' style='background-color:  rgba(255, 255, 255, 0.65);color:black' id='$a'><br>
                     <img src='".$rowd['Image']."' alt='Avatar' class='w3-left w3-circle w3-margin-right' style='width:60px;float:left;'>
                     <span>Name:  ".$rowd['Name']."<br>Category:  ".$row['Category']."</span><span style='float:right'>Specialist:  ".$rowd['Specialist']."</span>
                     <br><br><br><br>
@@ -156,7 +165,7 @@ textarea {
                 $sql2 = "SELECT * FROM doctor where LicenseID='".$answer['LIC']."'";
                 $ansd=mysqli_query($conn,$sql2);
                 $answd=mysqli_fetch_assoc($ansd);
-                echo "<div class='w3-container w3-card w3-white w3-round w3-margin' style='display:none'><br>
+                echo "<div class='w3-container w3-card w3-round w3-margin' style='display:none;background-color:  rgba(255, 255, 255, 0.65);color:black'><br>
                       <img src='".$answd['Image']."' alt='Avatar' class='w3-left w3-circle w3-margin-right' style='width:60px;float:left;'>
                       <span>Name: ".$answd['Name']."<br>Specialist:  ".$answd['Specialist']."</span>
                       <br><br><br><br>
@@ -179,7 +188,7 @@ textarea {
           }
           else{
             echo"<center>
-          <div class='w3-container w3-card w3-white w3-round w3-margin w3-padding-large' style='width:30%'><br>
+          <div class='w3-container w3-card w3-round w3-margin w3-padding-large' style='width:30%;background-color:  rgba(255, 255, 255, 0.65);color:black'><br>
           <center>
           <span style='font-size: 18px;text-align: justify;display: inline-block;align=center;''><b>No Questions Found</b><br></span>
            </center></div></center>";

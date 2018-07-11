@@ -115,10 +115,10 @@ body {
     <!-- Left Column -->
     <div class="w3-col m3">
       <!------------------------------ Profile --------------------------------------------------------------->
-      <div class="w3-card w3-round" style="left:80px;top:90px;width:20%;position:fixed;background-color:  rgba(255, 255, 255, 0.65);color:black" type>
+      <div class="w3-card w3-round" style="margin-left:-6.6%;margin-top:1%;width:20%;position:fixed;background-color:  rgba(255, 255, 255, 0.65);color:black" type>
         <div class="w3-container">
          <h2 class="w3-center"><b>Patient's Profile</b></h2>
-         <p class="w3-center"><img src="<?php echo $row['image']; ?>" class="w3-circle" style="height:150px;width:110px;" alt="Avatar"></p>
+         <p class="w3-center"><img src="<?php echo $row['image']; ?>" class="w3-circle" style="height:35%;width:40%;" alt="Avatar"></p>
          <hr>
          <p><i class="fa fa-pencil fa-fw w3-margin-right w3-text-theme"></i><strong>Name: </strong><?php echo $row["Name"]; ?></p>
          <p><i class="fa fa-home fa-fw w3-margin-right w3-text-theme"></i><strong>Age: </strong><?php echo $row["AGE"]; ?></p>
@@ -130,7 +130,7 @@ body {
       </div>
       <br>
 
-      <div class="w3-card w3-round" style="margin-left:-8.6%;margin-top:28%;width:20%;position:fixed;background-color:  rgba(255, 255, 255, 0.65);color:black" type>
+      <div class="w3-card w3-round" style="margin-left:-6.6%;margin-top:30%;width:20%;position:fixed;background-color:  rgba(255, 255, 255, 0.65);color:black" type>
         <div class="w3-container">
          <h2 class="w3-center"><b>Update Severity</b></h2>
          <hr class="w3-clear">

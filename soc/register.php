@@ -1,6 +1,6 @@
 <?php
 session_start();
-include('trial.php');
+include('trial1.php');
 //$_SESSION["login"]="Doctor";
 $usr=$_REQUEST['firstname'];
 $_SESSION['aadhar']=$usr;

@@ -79,8 +79,9 @@ body, html {
   </ul>
 
 </header>
+
 </div>
-	
+	<img src='IITK.png' style='width:10%;height:17%;position:absolute;bottom: 4%;right: 1%;'>
 
  
 </body>
