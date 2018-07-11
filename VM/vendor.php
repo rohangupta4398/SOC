@@ -54,7 +54,7 @@ if(!isset($_SESSION['ID']))
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 
-    <link rel="icon" type="image/png" href="medhelp blue.png">
+    <link rel="icon" type="image/png" href="medhelpblue.png">
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
@@ -362,7 +362,7 @@ top:390px;
 
  <div class="w3-bar w3-theme-d5 w3-left-align w3-large" >
 
-    <span style='position: relative;height: 100%;width: 3%;float: left;vertical-align: middle;'><a href='index.php' class="w3-bar-item w3-padding-large w3-theme-d5 w3-left" style="position: relative;text-decoration: none;width: 20%;vertical-align: middle;"><img src='medhelp blue.png' style='height: 22px;width: 22px;float: left;vertical-align: middle;margin-top:4px 
+    <span style='position: relative;height: 100%;width: 3%;float: left;vertical-align: middle;'><a href='index.php' class="w3-bar-item w3-padding-large w3-theme-d5 w3-left" style="position: relative;text-decoration: none;width: 20%;vertical-align: middle;"><img src='medhelpblue.png' style='height: 22px;width: 22px;float: left;vertical-align: middle;margin-top:4px 
 
     '></span></a>
 

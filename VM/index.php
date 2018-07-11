@@ -6,7 +6,7 @@ session_start();
 <html>
 <head>
 	<title>MedHelp</title>
-  <link rel="icon" type="image/png" href="medhelp blue.png">
+  <link rel="icon" type="image/png" href="medhelpblue.png">
 	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
   <link rel="stylesheet" href="css/style.css">
 	<link href='http://fonts.googleapis.com/css?family=Comfortaa' rel='stylesheet' type='text/css'>

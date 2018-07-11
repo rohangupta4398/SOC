@@ -6,7 +6,7 @@ session_start();
 <head>
 	<title>Forgot</title>
 	<link rel="stylesheet" href="css/style.css">
-	<link rel="icon" type="image/png" href="medhelp blue.png">
+	<link rel="icon" type="image/png" href="medhelpblue.png">
 </head>
 <body>
 

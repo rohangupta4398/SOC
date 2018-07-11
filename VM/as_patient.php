@@ -9,7 +9,7 @@ unset($_SESSION['Aadhar']);
 <head>
 	<title>Login Below</title>
 	<link rel="stylesheet" href="css/style.css">
-	<link rel="icon" type="image/png" href="medhelp blue.png">
+	<link rel="icon" type="image/png" href="medhelpblue.png">
 </head>
 <body>
 
